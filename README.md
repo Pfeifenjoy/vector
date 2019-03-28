@@ -7,7 +7,8 @@ A simple implementation of a dynamic vector, which automatically allocates and r
 The library can either be downloaded as a prebuild version or compiled from source.
 
 To compile the library execute the following steps:
-```
+
+```bash
 git clone --branch <version> https://gitea.metthub.de/Pfeifenjoy/vector
 cmake -DCMAKE_BUILD_TYPE=Release -H. -Bbuild
 cmake --build build --target install
