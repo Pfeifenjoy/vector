@@ -1,3 +1,5 @@
+[![Build Status](https://drone.metthub.de/api/badges/Pfeifenjoy/vector/status.svg)](https://drone.metthub.de/Pfeifenjoy/vector)
+
 #vector
 
 A simple implementation of a dynamic vector, which automatically allocates and releases memory.
