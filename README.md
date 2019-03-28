@@ -1,10 +1,10 @@
 [![Build Status](https://drone.metthub.de/api/badges/Pfeifenjoy/vector/status.svg)](https://drone.metthub.de/Pfeifenjoy/vector)
 
-#vector
+# vector
 
 A simple implementation of a dynamic vector, which automatically allocates and releases memory.
 
-#Installation
+# Installation
 
 The library can either be downloaded as a prebuild version or compiled from source.
 
@@ -19,7 +19,7 @@ cmake --build build --target install
 This will download the source code, compile and install it.
 Please replace `<version>` by your desired version of this library.
 
-#Usage with cmake
+# Usage with cmake
 
 The library can be easily included into cmake projects by importing the targets.
 
