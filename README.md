@@ -8,19 +8,20 @@ The library can either be downloaded as a prebuild version or compiled from sour
 
 To compile the library execute the following steps:
 ```
-git clone --branch 0.0.0 https://gitea.metthub.de/Pfeifenjoy/vector
+git clone --branch <version> https://gitea.metthub.de/Pfeifenjoy/vector
 cmake -DCMAKE_BUILD_TYPE=Release -H. -Bbuild
 cmake --build build --target install
 ```
 
 This will download the source code, compile and install it.
+Please replace `<version>` by your desired version of this library.
 
 #Usage with cmake
 
 The library can be easily included into cmake projects by importing the targets.
 
 ```cmake
-find_package(vector 0.0.0 EXACT REQUIRED)
+find_package(vector <version> EXACT REQUIRED)
 target_link_libraries(<target> PRIVATE vector::vector-shared)
 #or
 target_link_libraries(<target> PRIVATE vector::vector-static)
