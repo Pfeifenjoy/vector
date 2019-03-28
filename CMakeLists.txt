@@ -27,13 +27,18 @@ include(test)
 #Install
 install(TARGETS vector-headers vector-static vector-shared
 	EXPORT vectorTargets
-	PUBLIC_HEADER
 	ARCHIVE DESTINATION lib
 	LIBRARY DESTINATION lib
 	RUNTIME DESTINATION bin
 	INCLUDES DESTINATION include
 )
 install(DIRECTORY include/vector DESTINATION include)
+
+install(EXPORT vectorTargets
+	FILE vectorTargets.cmake
+	NAMESPACE vector::
+	DESTINATION lib/cmake/vector
+)
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file("vectorConfigVersion.cmake"
