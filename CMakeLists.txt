@@ -6,7 +6,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
 include(git)
 
 #Targets
-set(SRCS src/vector.c)
+set(SRCS src/vector.c src/memory.c)
 add_library(vector-headers INTERFACE)
 target_include_directories(vector-headers INTERFACE
 	$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
