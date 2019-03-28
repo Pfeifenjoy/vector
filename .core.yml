@@ -1,0 +1,41 @@
+kind: pipeline
+name: default
+
+steps:
+
+- name: build
+  image: pfeifenjoy/vector
+  commands:
+  - cmake -DCMAKE_BUILD_TYPE=Debug -H. -Bbuild
+  - cmake --build build
+
+- name: test
+  image: pfeifenjoy/vector
+  commands:
+  - cd build
+  - ctest --verbose .
+  - cd ..
+
+- name: linux
+  image: pfeifenjoy/vector
+  commands:
+  - rm -rf build
+  - cmake -DCMAKE_BUILD_TYPE=Release -H. -Bbuild
+  - cmake --build build --target package
+
+- name: gitea_release
+  image: plugins/gitea-release
+  settings:
+    api_key:
+        from_secret: gitea_token
+    base_url: https://gitea.metthub.de
+    files: build/vector-*
+  checksum:
+    - md5
+    - sha1
+    - sha256
+    - sha512
+    - adler32
+    - crc32
+  when:
+    event: tag
